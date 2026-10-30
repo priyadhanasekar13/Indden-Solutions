@@ -99,3 +99,12 @@ footer .bottom{grid-column:1/-1;border-top:1px solid #222;display:flex;justify-c
   input, select, textarea{font-size:16px !important}
   body{overflow-x:hidden}
 }
+
+/* FORCE all grids to 1 column on mobile */
+@media(max-width:900px){
+  .section > div[style*="grid-template-columns"],
+  div[style*="2fr"],
+  div[style*="1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
