@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing - Indden Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="asset/css/style.css">
+<style>
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
+.price-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:28px;transition:0.3s}
+.price-card.popular{border:2px solid var(--primary);transform:scale(1.03);box-shadow:0 10px 30px rgba(124,58,237,0.15)}
+.price-card h3{font-size:20px}
+.price{font-size:36px;font-weight:700;margin:12px 0}
+.price span{font-size:14px;color:var(--text-secondary);font-weight:400}
+.price-card ul{list-style:none;margin-top:16px}
+.price-card li{font-size:13px;color:var(--text-secondary);line-height:2.2}
+.price-card li::before{content:'✓ ';color:var(--primary);font-weight:700}
+@media(max-width:900px){.pricing-grid{grid-template-columns:1fr}.price-card.popular{transform:none}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo" style="display:flex;align-items:center;gap:8px">
+  <img src="asset/css/imgs/logopng.png" alt="Indden Solutions" style="height:58px;width:auto">
+</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="client.html">Clients</a></li>
+    <li><a href="project.html">Projects</a></li>
+    <li><a href="invoice.html">Invoice</a></li>
+    <li><a href="pricing.html" class="active">Pricing</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+  <a href="login.html" class="btn btn-primary">Get Started</a>
+</nav>
+
+<section class="section" style="padding-top:100px;text-align:center">
+  <span class="pill">Simple Pricing</span>
+  <h2 style="margin-top:12px">Choose Your Plan</h2>
+  <p class="secondary">All plans include your hero video landing + purple ERP</p>
+
+  <div class="pricing-grid">
+    <div class="price-card"><h3>Starter</h3><div class="price">₹999<span>/month</span></div><p class="secondary">For freelancers</p><ul><li>5 Clients</li><li>3 Projects</li><li>Basic Invoicing</li><li>Email Support</li></ul><button class="btn" style="width:100%;margin-top:20px" onclick="showToast('Starter Selected')">Choose Starter</button></div>
+    <div class="price-card popular"><span class="pill" style="background:var(--primary);color:#fff">Most Popular</span><h3 style="margin-top:10px">Professional</h3><div class="price" style="color:var(--primary)">₹2,499<span>/month</span></div><p class="secondary">For growing teams</p><ul><li>50 Clients</li><li>Unlimited Projects</li><li>Auto GST Invoice</li><li>AI Insights</li><li>Priority Support</li></ul><button class="btn btn-primary" style="width:100%;margin-top:20px" onclick="showToast('Pro Plan Selected')">Choose Pro</button></div>
+    <div class="price-card"><h3>Enterprise</h3><div class="price">₹5,999<span>/month</span></div><p class="secondary">For agencies</p><ul><li>Unlimited Everything</li><li>Custom Domain</li><li>White-label</li><li>24/7 Support</li></ul><button class="btn" style="width:100%;margin-top:20px" onclick="showToast('Enterprise Contact')">Contact Sales</button></div>
+  </div>
+</section>
+
+<footer>
+  <div><div class="logo" style="color:#fff">✦ Indden <span style="color:#A78BFA">Solutions</span></div><p>All-in-one ERP</p></div>
+  <div><h4>Modules</h4><a>CRM</a><br><a>Finance</a></div>
+  <div><h4>Company</h4><a href="index.html">Home</a></div>
+  <div><h4>Contact</h4><p>📍 Chennai</p></div>
+  <div class="bottom"><span>© 2024 Indden Solutions</span><span>Purple #7C3AED</span></div>
+</footer>
+<div id="toast" class="toast"></div>
+<script src="asset/css/script.js"></script>
+</body>
+</html>

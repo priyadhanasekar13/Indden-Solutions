@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indden Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="asset/css/style.css">
+ 
+</head>
+<body>
+<nav>
+  <div class="logo" style="display:flex;align-items:center;gap:8px">
+  <img src="asset/css/imgs/logopng.png" alt="Indden Solutions" style="height:58px;width:auto">
+</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Home</a></li>
+    
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="client.html">Clients</a></li>
+    <li><a href="project.html">Projects</a></li>
+    <li><a href="invoice.html">Invoice</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+  <a href="login.html" class="btn btn-primary">Login</a>
+</nav>
+
+<!-- HERO WITH YOUR VIDEO -->
+<section class="hero">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="asset/css/imgs/IS1.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="pill" style="background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.3)">All-in-One ERP for Consultants</span>
+    <h1>Simplify Your Business with <span style="color:#EDE9FF">Mini ERP</span></h1>
+    <p>Manage CRM, HR, Finance, Payments & Inventory from single platform.</p>
+    <div style="display:flex;gap:12px;margin-top:24px">
+      <button class="btn btn-primary" onclick="document.getElementById('modules').scrollIntoView({behavior:'smooth'})">Request Demo</button>
+      <a href="dashboard.html" class="btn" style="background:#fff;color:#7C3AED">Explore Modules</a>
+    </div>
+  </div>
+</section>
+
+<!-- <section id="modules" class="section alt">
+  <div class="ai-banner">
+    <div><h2>Accelerate your Business with Intelligent AI Solutions</h2><p>Harness the power of AI to automate and grow faster.</p></div>
+    <a href="crm.html" class="btn" style="background:#fff;color:#7C3AED;font-weight:700">Request a Demo</a>
+  </div>
+</section>
+
+<section style="line-height:0">
+  <img src="asset/css/imgs/ai-banner2.jpeg" style="width:100%;display:block" alt="AI Banner">
+</section> -->
+
+<!-- 1 ROW, 2 COLUMNS - REPLACES LINES 48-57 -->
+<section style="padding:40px 5%;background:#F8F7FF">
+  <div style="max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch">
+
+    <!-- LEFT COLUMN - Your Line 48-53 Content -->
+    <div class="ai-banner" style="background:#ffffff;border:1px solid #E9E7F5;border-radius:16px;padding:40px;display:flex;flex-direction:column;justify-content:center">
+      <div>
+        <h2 style="font-size:28px;line-height:1.2;color:#111827">Accelerate your Business with Intelligent AI Solutions</h2>
+        <p style="color:#6B7280;margin:10px 0 18px;font-size:14px">Harness the power of AI to automate and grow faster.</p>
+        <a href="dashboard.html" class="btn" style="background:#7C3AED;color:#fff;font-weight:700;padding:10px 18px;border-radius:10px;text-decoration:none;display:inline-block">Request a Demo</a>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN - Your Line 55-57 Image -->
+    <div style="border-radius:16px;overflow:hidden">
+      <img src="asset/css/imgs/ai-banner2.jpeg" style="width:100%;height:100%;object-fit:cover;display:block" alt="AI Banner">
+    </div>
+
+  </div>
+</section>
+
+<footer>
+
+<footer>
+  <div><div class="logo" style="color:#fff">✦ Indden <span style="color:#A78BFA">Solutions</span></div><p>All-in-one ERP solution. Manage everything from one place.</p></div>
+  <div><h4>Modules</h4><a>CRM & Leads</a><br><a>HR & Payroll</a><br><a>Finance</a><br><a>Inventory</a><br><a>AI Options</a></div>
+  <div><h4>Company</h4><a href="dashboard.html">Dashboard</a><br><a href="clients.html">Clients</a><br><a href="projects.html">Projects</a><br><a>Pricing</a></div>
+  <div><h4>Contact</h4><p>📍 Chennai<br>✉️ hello@indden.com<br>📞 +91 98765 43210</p></div>
+  <div class="bottom"><span>© 2024 Indden Solutions</span><span>Purple: #7C3AED | Inter + Jakarta</span></div>
+</footer>
+<div id="toast" class="toast"></div>
+<script src="asset/css/script.js"></script>
+</body>
+</html>

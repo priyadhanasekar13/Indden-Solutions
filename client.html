@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clients - Indden Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="asset/css/style.css">
+</head>
+<body>
+<nav>
+  <div class="logo" style="display:flex;align-items:center;gap:8px">
+  <img src="asset/css/imgs/logopng.png" alt="Indden Solutions" style="height:58px;width:auto">
+</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="client.html" class="active">Clients</a></li>
+    <li><a href="project.html">Projects</a></li>
+    <li><a href="invoice.html">Invoice</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+  <button class="btn btn-primary">JD</button>
+</nav>
+
+<section class="section" style="padding-top:100px">
+  <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center">
+    <div><span class="pill">CRM Module</span><h2 style="margin-top:8px">Manage Clients</h2><p class="secondary">Search, add and track your clients</p></div>
+    <input type="text" id="searchClient" onkeyup="filterClients()" placeholder="🔍 Search clients..." style="max-width:280px">
+  </div>
+
+  <!-- Add Client Form -->
+  <div class="form-card" style="margin-top:20px">
+    <div class="form-header"><h3>+ Add New Client</h3><span style="font-size:12px;opacity:0.8">Interactive</span></div>
+    <div class="form-body">
+      <label>Client Name *</label><input type="text" id="newClientName" placeholder="Ex: TechNova Pvt Ltd">
+      <label>Company / Brand</label><input type="text" id="newCompany" placeholder="Ex: TechNova">
+      <label>Email</label><input type="email" id="fEmail" placeholder="contact@technova.com">
+      <label style="grid-column:1/-1;text-align:right"><button class="btn btn-primary" onclick="addClient()">Add Client</button></label>
+    </div>
+  </div>
+
+  <!-- Client Table -->
+  <div class="table-wrap">
+    <table id="clientTable">
+      <tr><th>#</th><th>Client Name</th><th>Company</th><th>Type</th><th>Status</th><th>Action</th></tr>
+      <tr><td>1</td><td>Rahul Sharma</td><td>TechNova</td><td>IT</td><td><span class="status active">Active</span></td><td><button onclick="this.closest('tr').remove();updateCount()">Delete</button></td></tr>
+      <tr><td>2</td><td>Priya BuildRight</td><td>BuildRight Infra</td><td>Construction</td><td><span class="status active">Active</span></td><td><button onclick="this.closest('tr').remove();updateCount()">Delete</button></td></tr>
+      <tr><td>3</td><td>Indden Internal</td><td>Indden Solutions</td><td>Software</td><td><span class="status progress">Onboarding</span></td><td><button onclick="this.closest('tr').remove();updateCount()">Delete</button></td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div><div class="logo" style="color:#fff">✦ Indden <span style="color:#A78BFA">Solutions</span></div><p>All-in-one ERP.</p></div>
+  <div><h4>Modules</h4><a>CRM</a><br><a>HR</a><br><a>Finance</a></div>
+  <div><h4>Company</h4><a href="index.html">Home</a><br><a href="dashboard.html">Dashboard</a></div>
+  <div><h4>Contact</h4><p>📍 Chennai</p></div>
+  <div class="bottom"><span>© 2024 Indden Solutions</span><span>Purple #7C3AED</span></div>
+</footer>
+<div id="toast" class="toast"></div>
+<script src="asset/css/script.js"></script>
+</body>
+</html>

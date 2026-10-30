@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Indden Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="asset/css/style.css">
+</head>
+<body>
+<nav>
+  <div class="logo" style="display:flex;align-items:center;gap:8px">
+  <img src="asset/css/imgs/logopng.png" alt="Indden Solutions" style="height:58px;width:auto">
+</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    
+    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+    <li><a href="client.html">Clients</a></li>
+    <li><a href="project.html">Projects</a></li>
+    <li><a href="invoice.html">Invoice</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+  <button class="btn btn-primary" onclick="showToast('Profile Clicked')">JD</button>
+</nav>
+
+<section class="section" style="padding-top:100px">
+  <span class="pill">Live Overview</span>
+  <h2 style="margin-top:12px">Business Dashboard</h2>
+  <p class="secondary">Track your ERP performance in real-time</p>
+
+  <div class="kpi-grid">
+    <div class="kpi"><p class="secondary">Total Revenue</p><h3 id="kpiRevenue">₹12.5L</h3><p class="secondary" style="color:#0A7A3A">↑ 12% this month</p></div>
+    <div class="kpi"><p class="secondary">Active Clients</p><h3 id="kpiClients">24</h3><p class="secondary" style="color:#0A7A3A">↑ 3 new</p></div>
+    <div class="kpi"><p class="secondary">Ongoing Projects</p><h3>18</h3><p class="secondary">6 due this week</p></div>
+    <div class="kpi"><p class="secondary">Pending Invoices</p><h3>₹2.3L</h3><p class="secondary" style="color:#B91C1C">5 overdue</p></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:2fr 1fr;gap:16px;margin-top:24px">
+    <div class="form-card"><div class="form-header"><h3>Recent Projects</h3><button class="btn" style="background:#fff;color:#7C3AED;padding:6px 12px">View All</button></div>
+      <div class="table-wrap"><table><tr><th>Project</th><th>Client</th><th>Status</th><th>Progress</th></tr>
+        <tr><td>CRM Implementation</td><td>TechNova</td><td><span class="status active">Active</span></td><td>75%</td></tr>
+        <tr><td>Website Redesign</td><td>Indden</td><td><span class="status progress">In Review</span></td><td>90%</td></tr>
+        <tr><td>ERP Audit</td><td>BuildRight</td><td><span class="status active">Active</span></td><td>45%</td></tr>
+      </table></div>
+    </div>
+    <div class="form-card"><div class="form-header"><h3>Quick Actions</h3></div><div style="padding:20px;display:flex;flex-direction:column;gap:10px">
+      <button class="btn btn-primary" onclick="showToast('New Client Added')">+ Add Client</button>
+      <button class="btn" onclick="window.location.href='invoice.html'">+ Create Invoice</button>
+      <button class="btn" onclick="window.location.href='projects.html'">+ New Project</button>
+      <button class="btn" style="border-style:dashed" onclick="showToast('AI Insights Coming Soon')">✦ AI Insights</button>
+    </div></div>
+  </div>
+</section>
+
+<footer>
+  <div><div class="logo" style="color:#fff">✦ Indden <span style="color:#A78BFA">Solutions</span></div><p>All-in-one ERP solution.</p></div>
+  <div><h4>Modules</h4><a>CRM</a><br><a>HR</a><br><a>Finance</a></div>
+  <div><h4>Company</h4><a href="index.html">Home</a><br><a href="clients.html">Clients</a><br><a href="projects.html">Projects</a></div>
+  <div><h4>Contact</h4><p>📍 Chennai<br>✉️ hello@indden.com</p></div>
+  <div class="bottom"><span>© 2024 Indden Solutions</span><span>Purple #7C3AED</span></div>
+</footer>
+<div id="toast" class="toast"></div>
+<script src="asset/css/script.js"></script>
+</body>
+</html>

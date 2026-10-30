@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoice - Indden Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="asset/css/style.css">
+</head>
+<body>
+<nav>
+  <div class="logo" style="display:flex;align-items:center;gap:8px">
+  <img src="asset/css/imgs/logopng.png" alt="Indden Solutions" style="height:58px;width:auto">
+</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="client.html">Clients</a></li>
+    <li><a href="project.html">Projects</a></li>
+    <li><a href="invoice.html" class="active">Invoice</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+  <button class="btn btn-primary">JD</button>
+</nav>
+
+<section class="section" style="padding-top:100px">
+  <span class="pill">Finance Module</span>
+  <h2 style="margin-top:8px">Create Invoice</h2>
+  <p class="secondary">Auto GST calculation + Professional format</p>
+
+  <div style="display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-top:20px">
+    <!-- Invoice Form -->
+    <div class="form-card">
+      <div class="form-header"><h3>Invoice Details</h3><span style="font-size:12px">INV-2024-001</span></div>
+      <div class="form-body">
+        <label>Client Name *</label><input type="text" placeholder="Ex: TechNova">
+        <label>Project / Service</label><input type="text" placeholder="CRM Implementation">
+        <label>Amount (₹) *</label><input type="number" id="invAmount" placeholder="50000" oninput="calcInvoice()" value="50000">
+        <label>GST % *</label><select id="invGst" onchange="calcInvoice()"><option value="0">0% - No GST</option><option value="5">5%</option><option value="12">12%</option><option value="18" selected>18% (Standard)</option><option value="28">28%</option></select>
+        <label>Due Date</label><input type="date">
+        <label>Notes</label><textarea placeholder="Payment terms..." style="height:60px"></textarea>
+        <label style="grid-column:1/-1;text-align:right"><button class="btn btn-primary" onclick="showToast('Invoice Created & Sent!')">Generate Invoice</button></label>
+      </div>
+    </div>
+
+    <!-- Live Summary - PURPLE -->
+    <div>
+      <div class="form-card" style="position:sticky;top:90px">
+        <div class="form-header"><h3>Summary</h3><span>Live</span></div>
+        <div style="padding:20px">
+          <div id="invSummary" style="font-size:14px;line-height:2;background:#F8F7FF;padding:16px;border-radius:10px;border:1px dashed #E9E7F5">Loading...</div>
+          <div style="margin-top:16px;padding:12px;background:var(--primary-light);border-radius:8px;text-align:center">
+            <p class="secondary" style="font-size:11px">INDDEN SOLUTIONS</p>
+            <p style="font-size:12px;color:var(--primary-dark);font-weight:600">Professional Invoice Format</p>
+          </div>
+          <button class="btn" style="width:100%;margin-top:12px" onclick="showToast('PDF Downloaded')">⬇️ Download PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Invoices -->
+  <div class="table-wrap" style="margin-top:20px">
+    <table><tr><th>Invoice #</th><th>Client</th><th>Amount</th><th>GST</th><th>Total</th><th>Status</th></tr>
+      <tr><td>INV-001</td><td>TechNova</td><td>₹50,000</td><td>₹9,000</td><td><b>₹59,000</b></td><td><span class="status active">Paid</span></td></tr>
+      <tr><td>INV-002</td><td>BuildRight</td><td>₹1,20,000</td><td>₹21,600</td><td><b>₹1,41,600</b></td><td><span class="status progress">Pending</span></td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div><div class="logo" style="color:#fff">✦ Indden <span style="color:#A78BFA">Solutions</span></div><p>ERP Finance</p></div>
+  <div><h4>Modules</h4><a>Invoice</a><br><a>Finance</a></div>
+  <div><h4>Company</h4><a href="index.html">Home</a></div>
+  <div><h4>Contact</h4><p>📍 Chennai</p></div>
+  <div class="bottom"><span>© 2024 Indden Solutions</span><span>Purple #7C3AED</span></div>
+</footer>
+<div id="toast" class="toast"></div>
+<script src="asset/css/script.js"></script>
+</body>
+</html>
